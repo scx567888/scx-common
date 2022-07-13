@@ -1,12 +1,13 @@
 package cool.scx.util;
 
+import io.vertx.core.http.HttpServerRequest;
+
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Map;
 import java.util.stream.Stream;
 
 /**
@@ -18,28 +19,18 @@ import java.util.stream.Stream;
 public final class NetUtils {
 
     /**
-     * a
-     *
-     * @param header a
-     * @return a
-     */
-    public static String getClientIPAddress(Map<String, String> header) {
-        return getClientIPAddress(header, null);
-    }
-
-    /**
      * 获取访问者IP
      * <p>
      * 先从Header中获取X-Real-IP，如果不存在再从X-Forwarded-For获得第一个IP(用,分割)，
      * 如果还不存在则调用 HttpServerRequest.remoteAddress()
      *
-     * @param header           a
-     * @param remoteAddressStr a
-     * @return a
+     * @param request a
+     * @return IP
      */
-    public static String getClientIPAddress(Map<String, String> header, String remoteAddressStr) {
-        var xRealIPStr = header.get("X-Real-IP");
-        var xForwardedForStr = header.get("X-Forwarded-For");
+    public static String getClientIPAddress(HttpServerRequest request) {
+        var xRealIPStr = request.getHeader("X-Real-IP");
+        var xForwardedForStr = request.getHeader("X-Forwarded-For");
+        var remoteAddressStr = request.remoteAddress().hostAddress();
         var xRealIP = "";
         var xForwardedFor = new String[]{};
         var remoteAddress = "";
