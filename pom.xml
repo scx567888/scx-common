@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cool.scx</groupId>
+        <artifactId>scx-parent</artifactId>
+        <version>8</version>
+    </parent>
+
+    <artifactId>scx-common</artifactId>
+    <packaging>jar</packaging>
+    <name>scx-common</name>
+
+    <version>0.0.1</version>
+
+    <description>SCX Common</description>
+    <url>https://github.com/scx567888/scx-common</url>
+
+    <developers>
+        <developer>
+            <id>scx567888</id>
+            <name>scx567888</name>
+            <email>scx567888@outlook.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/scx567888/scx-common/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/scx567888/scx-common.git</connection>
+        <developerConnection>scm:git:https://github.com/scx567888/scx-common.git</developerConnection>
+        <url>https://github.com/scx567888/scx-common</url>
+    </scm>
+
+    <build>
+        <plugins>
+
+            <!-- 此插件用于将项目打包为 可执行 jar 包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <!-- 此处因为没有类似 maven-source-plugin 插件中 excludeResources 的选项 -->
+                    <!-- 所以在这里手动排除资源文件 , 具体文件说明见下方 -->
+                    <excludes>
+                        <!-- 默认 git 占位空文件 -->
+                        <exclude>/.gitkeep/</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- 对 jar 包等文件进行 gpg 签名  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <configuration>
+                    <!-- 这里启用签名 -->
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>cool.scx</groupId>
+            <artifactId>scx-functional</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cool.scx</groupId>
+            <artifactId>scx-logging</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty5-buffer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty5-codec-http</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
