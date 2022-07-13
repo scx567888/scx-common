@@ -62,8 +62,9 @@ public final class ScxExceptionHelper {
     /**
      * 忽略异常 发生异常时返回默认值
      *
-     * @param handler a
-     * @param <T>     a
+     * @param handler    a
+     * @param <T>        a
+     * @param defaultVal a T object
      * @return a
      */
     public static <T> T ignore(ScxHandlerRE<T, ?> handler, T defaultVal) {
