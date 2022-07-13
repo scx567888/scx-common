@@ -13,6 +13,9 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+import static io.netty5.handler.codec.http.HttpHeaderNames.CONTENT_TYPE;
+import static io.netty5.handler.codec.http.HttpHeaderValues.MULTIPART_FORM_DATA;
+
 /**
  * a
  *
@@ -132,7 +135,7 @@ public final class FormData implements Body {
     @Override
     public HttpRequest.BodyPublisher getBodyPublisher(HttpRequest.Builder builder) {
         final String boundary = FORM_BOUNDARY_PREFIX + RandomUtils.randomString(8);
-        builder.setHeader("content-cool.scx.type", "multipart/form-data; boundary=" + boundary);
+        builder.setHeader(CONTENT_TYPE.toString(), MULTIPART_FORM_DATA + "; boundary=" + boundary);
         try (var allocator = BufferAllocator.onHeapUnpooled(); var buffer = allocator.compose()) {
             for (var formDataItem : formDataItemList) {
                 buffer.writeBytes(getStart(formDataItem, boundary));

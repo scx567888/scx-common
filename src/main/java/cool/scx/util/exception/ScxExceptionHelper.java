@@ -1,6 +1,5 @@
 package cool.scx.util.exception;
 
-
 import cool.scx.functional.ScxHandlerE;
 import cool.scx.functional.ScxHandlerRE;
 
