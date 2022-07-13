@@ -3,7 +3,7 @@ package cool.scx.util.tree;
 import java.util.List;
 
 /**
- * 树模型接口 注意和 {@link ScxTree} 进行区分 两者用途不同
+ * 树模型接口 注意和 {@link cool.scx.util.tree.ScxTree} 进行区分 两者用途不同
  *
  * @param <T> T
  * @author scx567888
@@ -21,7 +21,7 @@ public interface ScxTreeModel<T extends ScxTreeModel<T>> {
     /**
      * 父节点 ID
      *
-     * @return a {@link List} object
+     * @return a {@link java.util.List} object
      */
     Long parentID();
 

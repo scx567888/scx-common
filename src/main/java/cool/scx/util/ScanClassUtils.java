@@ -38,7 +38,7 @@ public final class ScanClassUtils {
      *
      * @param jarFileURI jar
      * @return r
-     * @throws IOException r
+     * @throws java.io.IOException r
      */
     public static List<Class<?>> getClassListByJar(URI jarFileURI) throws IOException {
         //获取 jarFile
@@ -51,10 +51,10 @@ public final class ScanClassUtils {
     /**
      * <p>getClassListByDir.</p>
      *
-     * @param classRootDir a {@link URI} object
-     * @param classLoader  a {@link ClassLoader} object
-     * @return a {@link List} object
-     * @throws IOException if any.
+     * @param classRootDir a {@link java.net.URI} object
+     * @param classLoader  a {@link java.lang.ClassLoader} object
+     * @return a {@link java.util.List} object
+     * @throws java.io.IOException if any.
      */
     public static List<Class<?>> getClassListByDir(URI classRootDir, ClassLoader classLoader) throws IOException {
         var classList = new ArrayList<Class<?>>();
@@ -108,9 +108,9 @@ public final class ScanClassUtils {
     /**
      * 根据 class 获取地址
      *
-     * @param source a {@link Class} object.
+     * @param source a {@link java.lang.Class} object.
      * @return 可能是 目录 也可能是 jar 文件
-     * @throws URISyntaxException if any.
+     * @throws java.net.URISyntaxException if any.
      */
     public static URI getClassSource(Class<?> source) throws URISyntaxException {
         return source.getProtectionDomain().getCodeSource().getLocation().toURI();
@@ -138,9 +138,9 @@ public final class ScanClassUtils {
     /**
      * 根据 basePackage 对 class 进行过滤
      *
-     * @param classList       a {@link List} object
-     * @param basePackageName a {@link String} object
-     * @return a {@link List} object
+     * @param classList       a {@link java.util.List} object
+     * @param basePackageName a {@link java.lang.String} object
+     * @return a {@link java.util.List} object
      */
     public static List<Class<?>> filterByBasePackage(List<Class<?>> classList, String basePackageName) {
         return classList.stream().filter(c -> c.getPackageName().startsWith(basePackageName)).collect(Collectors.toList());
@@ -149,7 +149,7 @@ public final class ScanClassUtils {
     /**
      * <p>isJar.</p>
      *
-     * @param path a {@link File} object
+     * @param path a {@link java.io.File} object
      * @return a boolean
      */
     public static boolean isJar(Path path) {

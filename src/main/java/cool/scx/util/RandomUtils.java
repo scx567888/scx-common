@@ -27,7 +27,7 @@ public final class RandomUtils {
      *
      * @param size       code 的长度
      * @param withLetter code 中是否包含字母
-     * @return a {@link String} object
+     * @return a {@link java.lang.String} object
      */
     public static String randomString(int size, boolean withLetter) {
         var code = new StringBuilder();
@@ -62,7 +62,7 @@ public final class RandomUtils {
     /**
      * 获取UUID
      *
-     * @return a {@link String} object.
+     * @return a {@link java.lang.String} object.
      */
     public static String randomUUID() {
         return UUID.randomUUID().toString();

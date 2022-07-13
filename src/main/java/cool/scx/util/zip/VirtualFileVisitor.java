@@ -12,7 +12,7 @@ public interface VirtualFileVisitor {
      * 访问文件夹时
      *
      * @param path a
-     * @throws Exception a
+     * @throws java.lang.Exception a
      */
     void visitDirectory(String path) throws Exception;
 
@@ -21,7 +21,7 @@ public interface VirtualFileVisitor {
      *
      * @param path    a
      * @param content a
-     * @throws Exception a
+     * @throws java.lang.Exception a
      */
     void visitFile(String path, byte[] content) throws Exception;
 

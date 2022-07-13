@@ -31,7 +31,7 @@ public final class StopWatch {
     /**
      * 启动计时器
      *
-     * @param name a {@link String} object.
+     * @param name a {@link java.lang.String} object.
      */
     public static void start(String name) {
         if (START_TIME_MAP.get(name) == null) {
@@ -64,7 +64,7 @@ public final class StopWatch {
     /**
      * 停止计时并返回时间差 单位微毫秒
      *
-     * @param name a {@link String} object.
+     * @param name a {@link java.lang.String} object.
      * @return 时间差
      */
     public static long stopToNanos(String name) {
@@ -75,7 +75,7 @@ public final class StopWatch {
     /**
      * 停止计时并返回时间差 单位毫秒
      *
-     * @param name a {@link String} object.
+     * @param name a {@link java.lang.String} object.
      * @return 时间差
      */
     public static long stopToMillis(String name) {
@@ -85,7 +85,7 @@ public final class StopWatch {
     /**
      * 停止计时并返回时间差 单位秒
      *
-     * @param name a {@link String} object.
+     * @param name a {@link java.lang.String} object.
      * @return 时间差
      */
     public static double stopToSeconds(String name) {
