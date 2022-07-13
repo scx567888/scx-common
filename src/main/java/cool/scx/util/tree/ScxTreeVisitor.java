@@ -13,9 +13,9 @@ public interface ScxTreeVisitor<T extends ScxTree<T>> {
     /**
      * <p>handle.</p>
      *
-     * @param parents        a {@link List} object
+     * @param parents        a {@link java.util.List} object
      * @param currentScxTree a T object
-     * @throws Exception if any.
+     * @throws java.lang.Exception if any.
      */
     void handle(List<T> parents, T currentScxTree) throws Exception;
 

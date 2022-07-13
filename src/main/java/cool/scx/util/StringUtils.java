@@ -9,7 +9,7 @@ package cool.scx.util;
 public final class StringUtils {
 
     /**
-     * 创建重复字符串 (带分隔符) 拓展了 {@link String#repeat(int)} 无法添加分隔符的功能
+     * 创建重复字符串 (带分隔符) 拓展了 {@link java.lang.String#repeat(int)} 无法添加分隔符的功能
      *
      * @param str       源字符串
      * @param delimiter 分隔符
@@ -38,7 +38,7 @@ public final class StringUtils {
     /**
      * 校验字符串是否为 null 或全为空白 (空格 " ")
      *
-     * @param str a {@link Object} object.
+     * @param str a {@link java.lang.Object} object.
      * @return a boolean.
      */
     public static boolean isBlank(String str) {

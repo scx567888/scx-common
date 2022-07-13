@@ -79,7 +79,7 @@ public final class VirtualFile extends AbstractVirtualFile {
      * 获取虚拟文件的字节
      *
      * @return a
-     * @throws IOException a
+     * @throws java.io.IOException a
      */
     public byte[] getBytes() throws IOException {
         if (type == 0) {

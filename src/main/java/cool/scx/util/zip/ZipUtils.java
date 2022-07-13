@@ -24,7 +24,7 @@ public final class ZipUtils {
      * @param sourcePath 源文件路径
      * @param outputPath zip 输出路径
      * @param zipOptions a
-     * @throws IOException io
+     * @throws java.io.IOException io
      */
     public static void zip(Path sourcePath, Path outputPath, ZipOption... zipOptions) throws IOException {
         // 获取源路径 path 用于和后续文件进行相对路径的计算
@@ -76,7 +76,7 @@ public final class ZipUtils {
      * @param zipFilePath zip文件
      * @param outputPath  解压到的目录
      * @param zipOptions  a
-     * @throws IOException a
+     * @throws java.io.IOException a
      */
     public static void unzip(Path zipFilePath, Path outputPath, ZipOption... zipOptions) throws IOException {
         Files.createDirectories(outputPath);

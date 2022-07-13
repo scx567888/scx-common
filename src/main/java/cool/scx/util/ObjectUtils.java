@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * 处理对象的工具类<br>
  * 本质上就是对 {@link com.fasterxml.jackson.databind.ObjectMapper} 进行了一些简单的封装
- * 注意其中所有方法使用的 ObjectMapper 均采用 {@link JacksonHelper#setIgnoreJsonIgnore} 进行了处理
+ * 注意其中所有方法使用的 ObjectMapper 均采用 {@link cool.scx.util.JacksonHelper#setIgnoreJsonIgnore} 进行了处理
  * 故此方法中所有方法均忽略 @JsonIgnore 注解
  *
  * @author scx567888
@@ -135,9 +135,9 @@ public final class ObjectUtils {
      * 将对象转 json 底层调用 JSON_MAPPER.writeValueAsString()
      * 所以会忽略 JsonIgnore 注解 同时如果转换失败则在其内部消化异常 (打印) 并返回 ""
      *
-     * @param value        a {@link Object} object.
-     * @param defaultValue a {@link Object} object.
-     * @return a {@link String} object.
+     * @param value        a {@link java.lang.Object} object.
+     * @param defaultValue a {@link java.lang.Object} object.
+     * @return a {@link java.lang.String} object.
      */
     public static String toJson(Object value, String defaultValue) {
         try {
@@ -152,9 +152,9 @@ public final class ObjectUtils {
      * 将对象转 xml 底层调用 XML_MAPPER.writeValueAsString()
      * 所以会忽略 JsonIgnore 注解 同时如果转换失败则在其内部消化异常 (打印) 并返回 ""
      *
-     * @param value        a {@link Object} object.
-     * @param defaultValue a {@link Object} object.
-     * @return a {@link String} object.
+     * @param value        a {@link java.lang.Object} object.
+     * @param defaultValue a {@link java.lang.Object} object.
+     * @return a {@link java.lang.String} object.
      */
     public static String toXml(Object value, String defaultValue) {
         try {
@@ -170,7 +170,7 @@ public final class ObjectUtils {
      *
      * @param value a
      * @return a
-     * @throws JsonProcessingException a
+     * @throws com.fasterxml.jackson.core.JsonProcessingException a
      */
     public static String toJson(Object value) throws JsonProcessingException {
         return JSON_MAPPER.writeValueAsString(value);
@@ -181,7 +181,7 @@ public final class ObjectUtils {
      *
      * @param value a
      * @return a
-     * @throws JsonProcessingException a
+     * @throws com.fasterxml.jackson.core.JsonProcessingException a
      */
     public static String toXml(Object value) throws JsonProcessingException {
         return XML_MAPPER.writeValueAsString(value);
@@ -248,7 +248,7 @@ public final class ObjectUtils {
      * 将嵌套的 map 扁平化
      *
      * @param sourceMap 源 map
-     * @param parentKey a {@link String} object.
+     * @param parentKey a {@link java.lang.String} object.
      * @return 扁平化后的 map
      */
     private static Map<String, Object> flatMap0(Map<?, ?> sourceMap, String parentKey) {

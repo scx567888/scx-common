@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
  *
  * @param <K> a
  * @param <V> a
+ * @author scx567888
+ * @version 0.0.1
  */
 public final class MultiMap<K, V> {
 

@@ -20,7 +20,7 @@ public final class ScxTreeUtil {
      * @param scxTree a
      * @param visitor a
      * @param <T>     a
-     * @throws Exception a
+     * @throws java.lang.Exception a
      */
     public static <T extends ScxTree<T>> void walk1(final T scxTree, final ScxTreeVisitor<T> visitor) throws Exception {
         ArrayList<T> parents = null;
@@ -44,9 +44,9 @@ public final class ScxTreeUtil {
      * <p>walk.</p>
      *
      * @param scxTree a T object
-     * @param visitor a {@link ScxTreeVisitor} object
+     * @param visitor a {@link cool.scx.util.tree.ScxTreeVisitor} object
      * @param <T>     a T class
-     * @throws Exception if any.
+     * @throws java.lang.Exception if any.
      */
     public static <T extends ScxTree<T>> void walk(final T scxTree, final ScxTreeVisitor<T> visitor) throws Exception {
         _walk(null, scxTree, visitor);
@@ -55,11 +55,11 @@ public final class ScxTreeUtil {
     /**
      * <p>walk0.</p>
      *
-     * @param parents        a {@link List} object
+     * @param parents        a {@link java.util.List} object
      * @param currentScxTree a T object
-     * @param visitor        a {@link ScxTreeVisitor} object
+     * @param visitor        a {@link cool.scx.util.tree.ScxTreeVisitor} object
      * @param <T>            a T class
-     * @throws Exception if any.
+     * @throws java.lang.Exception if any.
      */
     private static <T extends ScxTree<T>> void _walk(final List<T> parents, final T currentScxTree, final ScxTreeVisitor<T> visitor) throws Exception {
         visitor.handle(parents, currentScxTree);

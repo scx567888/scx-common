@@ -53,7 +53,7 @@ public abstract class AbstractVirtualFile implements ScxTree<AbstractVirtualFile
      *
      * @param virtualFile a
      * @param zos         a
-     * @throws Exception a
+     * @throws java.lang.Exception a
      */
     private static void writeVirtualFileToZipOutputStream(AbstractVirtualFile virtualFile, ZipOutputStream zos) throws Exception {
         virtualFile.walk(new VirtualFileVisitor() {
@@ -78,9 +78,9 @@ public abstract class AbstractVirtualFile implements ScxTree<AbstractVirtualFile
     /**
      * <p>getFullPath.</p>
      *
-     * @param abstractVirtualFiles1 a {@link List} object
-     * @param abstractVirtualFiles2 a {@link AbstractVirtualFile} object
-     * @return a {@link String} object
+     * @param abstractVirtualFiles1 a {@link java.util.List} object
+     * @param abstractVirtualFiles2 a {@link cool.scx.util.zip.AbstractVirtualFile} object
+     * @return a {@link java.lang.String} object
      */
     private static String getFullPath(List<AbstractVirtualFile> abstractVirtualFiles1, AbstractVirtualFile... abstractVirtualFiles2) {
         var fullList = new ArrayList<AbstractVirtualFile>();
@@ -120,7 +120,7 @@ public abstract class AbstractVirtualFile implements ScxTree<AbstractVirtualFile
      * 将 virtualFile 转换为 byte 数组 方便前台用户下载使用
      *
      * @return a
-     * @throws Exception a
+     * @throws java.lang.Exception a
      */
     public byte[] toZipBytes() throws Exception {
         var bo = new ByteArrayOutputStream();
@@ -135,7 +135,7 @@ public abstract class AbstractVirtualFile implements ScxTree<AbstractVirtualFile
      * 将一个虚拟文件压缩
      *
      * @param outputPath a
-     * @throws Exception a
+     * @throws java.lang.Exception a
      */
     public void toZipFile(Path outputPath) throws Exception {
         // 创建一个新的空的输出文件的临时文件
@@ -150,7 +150,7 @@ public abstract class AbstractVirtualFile implements ScxTree<AbstractVirtualFile
      * 循环遍历一个 虚拟文件
      *
      * @param visitor a
-     * @throws Exception a
+     * @throws java.lang.Exception a
      */
     public void walk(VirtualFileVisitor visitor) throws Exception {
         ScxTreeUtil.walk(this, (parent, self) -> {

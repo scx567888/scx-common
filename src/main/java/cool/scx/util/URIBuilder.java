@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 /**
  * a
+ *
+ * @author scx567888
+ * @version 0.0.1
  */
 public final class URIBuilder {
 
@@ -126,6 +129,9 @@ public final class URIBuilder {
         return URI.create(this.toString());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         var encoder = new QueryStringEncoder(path, StandardCharsets.UTF_8);
